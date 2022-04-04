@@ -24,9 +24,9 @@
                         <!-- PROFILE AND CHATS -->
                         <div class="d-flex justify-content-between align-items-center bg-light">
                             <div class="d-flex align-items-center">
-                                <img src="./asset/img/avatar_io.jpg" alt="profilo"
+                                <img :src="profile.avatar" alt="profilo"
                                     class="mx-3 my-1 rounded-circle img-size">
-                                <span class="fs-5">Sofia</span>
+                                <span class="fs-5">{{ profile.name }}</span>
                             </div>
                             <div class="me-3">
                                 <i class="fa-solid fa-circle-notch"></i>
@@ -57,12 +57,12 @@
                         <!-- CHATS -->
                         <div class="">
                             <ul class="list-group list-group-flush">
-                                <li class="d-flex justify-content-between align-items-center list-group-item border">
+                                <li v-for="element in contacts" class="d-flex justify-content-between align-items-center list-group-item border">
                                     <div class="d-flex align-items-center">
-                                        <img src="./asset/img/avatar_1.jpg" alt="profilo"
+                                        <img :src="element.avatar" alt="profilo"
                                             class="me-3 img-size rounded-circle">
                                         <div class="d-flex flex-column align-self-start">
-                                            <span class="fs-5">Michele</span>
+                                            <span class="fs-5">{{ element.name }}</span>
                                             <span class="small-text text-secondary">Ultimo messaggio inviato</span>
                                         </div>
                                     </div>

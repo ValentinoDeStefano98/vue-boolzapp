@@ -46,3 +46,7 @@ p{
 .message-container{
     background-color: #F1EEED;
 }
+
+.overflow{
+    overflow-y: auto;
+}
