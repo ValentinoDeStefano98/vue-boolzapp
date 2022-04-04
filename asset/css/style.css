@@ -1,6 +1,44 @@
 /* GENERAL */
-html{
+.main{
     max-width: 1440px;
-    width: 80%;
+    width: 90%;
     margin: 0 auto;
+}
+
+/* BACKGROUND */
+.background{
+    height: 100vh;
+    /* Gradiente per sfondo */
+    background-image: linear-gradient(to bottom,
+    #009688 0px,
+    #009688 15vh,
+    #dddbd1 15vh,
+    #d2dbdc 100%);
+}
+
+/* PROFILE IMAGE */
+.img-size{
+    width: 60px;
+    height: 60px;
+}
+
+.small-text{
+    font-size: 0.8em;
+}
+
+/* RESET P */
+p{
+    margin-bottom: 0;
+}
+
+.sent{
+    background-color: green;
+}
+
+.received{
+    background-color: white;
+}
+
+.chatBackground{
+    background-color: #009688;
 }
