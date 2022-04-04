@@ -20,7 +20,7 @@
         <div class="background py-4">
             <div class="container h-100 bg-white main">
                 <div class="row h-100">
-                    <div class="col-4 border p-0">
+                    <div class="col-4 border p-0 h-100 d-flex flex-column">
                         <!-- PROFILE AND CHATS -->
                         <div class="d-flex justify-content-between align-items-center bg-light">
                             <div class="d-flex align-items-center">
@@ -55,8 +55,8 @@
                             </div>
                         </div>
                         <!-- CHATS -->
-                        <div class="">
-                            <ul class="list-group list-group-flush">
+                        <div class="contactsContainer">
+                            <ul class="list-group list-group-flush h-100 contactsList">
                                 <li v-for="element in contacts" class="d-flex justify-content-between align-items-center list-group-item border">
                                     <div class="d-flex align-items-center">
                                         <img :src="element.avatar" alt="profilo"
@@ -73,7 +73,7 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="col-8 d-flex flex-column justify-content p-0">
+                    <div class="col-8 d-flex flex-column justify-content p-0 h-100">
                         <!-- HEADER CHAT -->
                         <div class="d-flex justify-content-between align-items-center bg-light">
                             <div class="d-flex align-items-center">

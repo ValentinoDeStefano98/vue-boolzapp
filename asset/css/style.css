@@ -47,6 +47,14 @@ p{
     background-color: #F1EEED;
 }
 
-.overflow{
-    overflow-y: auto;
+.contactsContainer{
+    overflow: hidden;
 }
+.contactsList{
+    overflow: scroll;
+}
+
+le colonne a 100% di altezza
+d-flex a col 4 poi column
+div contenitore della lista hidden
+ul max height 100% poi scroll
