@@ -32,7 +32,7 @@ p{
 }
 
 .sent{
-    background-color: green;
+    background-color: #D8F8BF;
 }
 
 .received{
@@ -40,5 +40,9 @@ p{
 }
 
 .chatBackground{
-    background-color: #009688;
+    background-image: url(./../img/mine.jpg);
+}
+
+.message-container{
+    background-color: #F1EEED;
 }

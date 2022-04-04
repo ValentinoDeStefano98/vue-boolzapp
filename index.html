@@ -24,7 +24,8 @@
                         <!-- PROFILE AND CHATS -->
                         <div class="d-flex justify-content-between align-items-center bg-light">
                             <div class="d-flex align-items-center">
-                                <img src="./asset/img/avatar_io.jpg" alt="profilo" class="mx-3 rounded-circle img-thumbnail img-size">
+                                <img src="./asset/img/avatar_io.jpg" alt="profilo"
+                                    class="mx-3 my-1 rounded-circle img-size">
                                 <span class="fs-5">Sofia</span>
                             </div>
                             <div class="me-3">
@@ -40,11 +41,12 @@
                             </div>
                             <div class="lh-1">
                                 <p class="small-text">Ricevi notifiche di nuovi messaggi</p>
-                                <p class="text-secondary text-decoration-underline small-text">Ottieni notifiche desktop</p>
+                                <p class="text-secondary text-decoration-underline small-text">Ottieni notifiche desktop
+                                </p>
                             </div>
                         </div>
                         <!-- SEARCH -->
-                        <div class="d-flex align-items-center px-1 border">
+                        <div class="d-flex align-items-center px-1 border bg-light">
                             <div class="input-group my-2">
                                 <span class="input-group-text" id="basic-addon1"><i
                                         class="fa-solid fa-magnifying-glass"></i></span>
@@ -57,61 +59,84 @@
                             <ul class="list-group list-group-flush">
                                 <li class="d-flex justify-content-between align-items-center list-group-item border">
                                     <div class="d-flex align-items-center">
-                                        <img src="./asset/img/avatar_1.jpg" alt="profilo" class="me-3 img-size rounded-circle">
+                                        <img src="./asset/img/avatar_1.jpg" alt="profilo"
+                                            class="me-3 img-size rounded-circle">
                                         <div class="d-flex flex-column align-self-start">
                                             <span class="fs-5">Michele</span>
                                             <span class="small-text text-secondary">Ultimo messaggio inviato</span>
                                         </div>
-                                        
                                     </div>
                                     <div class="d-flex align-self-start">
                                         <span class="small-text text-secondary">12:00</span>
                                     </div>
                                 </li>
                             </ul>
-
                         </div>
                     </div>
                     <div class="col-8 d-flex flex-column justify-content p-0">
                         <!-- HEADER CHAT -->
-                        <div class="d-flex justify-content-between align-items-center">
+                        <div class="d-flex justify-content-between align-items-center bg-light">
                             <div class="d-flex align-items-center">
                                 <div class="d-flex align-items-center">
-                                        <img src="" alt="profilo" class="me-3">
-                                        <div class="d-flex flex-column">
-                                            <span>Nome</span>
-                                            <span>Ultimo accesso oggi alle 12:00</span>
-                                        </div>
-                                        
+                                    <img src="./asset/img/avatar_1.jpg" alt="profilo"
+                                        class="mx-3 my-1 img-size rounded-circle">
+                                    <div class="d-flex flex-column">
+                                        <span class="fs-5">Michele</span>
+                                        <span class="small-text text-secondary">Ultimo accesso oggi alle 12:00</span>
                                     </div>
+                                </div>
                             </div>
-                            <div>
-                                <i class="fa-solid fa-circle-notch"></i>
-                                <i class="fa-solid fa-message mx-3"></i>
+                            <div class="me-3">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                                <i class="fa-solid fa-paperclip mx-3"></i>
                                 <i class="fa-solid fa-ellipsis-vertical"></i>
                             </div>
                         </div>
                         <!-- CHAT -->
                         <div class="p-3 chatBackground h-100">
                             <ul class="list-group list-group-flush">
-                                <li class="list-group-item rounded-3 sent mb-3 align-self-end">
-                                    Hai portato a spasso il cane?
+                                <li class="list-group-item rounded-3 sent mb-3 align-self-end p-1">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-8 text-start">
+                                                <span>Hai portato a spasso il cane?</span>
+                                            </div>
+                                            <div class="col-4 d-flex justify-content-end align-items-end">
+                                                <span class="small-text">12:00</span>
+                                            </div>
+                                        </div>
+                                    </div>         
                                 </li>
-                                <li class="list-group-item rounded-3 received mb-3 align-self-start">
-                                    Hai portato a spasso il cane?
+                                <li class="list-group-item rounded-3 received mb-3 align-self-start p-1">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-8 text-start">
+                                                <span>Hai portato a spasso il cane?</span>
+                                            </div>
+                                            <div class="col-4 d-flex justify-content-end align-items-end">
+                                                <span class="small-text">12:00</span>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </li>
                             </ul>
                         </div>
-                        <div class="input-group mb-3">
-                                <span class="input-group-text" id="basic-addon1"><i
-                                        class="fa-solid fa-magnifying-glass"></i></span>
-                                <input type="text" class="form-control" aria-label="Username"
-                                    aria-describedby="basic-addon1">
+                        <div class="container w-100 py-2 message-container">
+                            <div class="row">
+                                <div class="col-1 d-flex justify-content-center align-items-center">
+                                    <i class="fa-regular fa-face-smile"></i>
+                                </div>
+                                <div class="col-10">
+                                    <input type="text" class="form-control input" aria-label="Username"
+                                        aria-describedby="basic-addon1" placeholder="Scrivi un messaggio">
+                                </div>
+                                <div class="col-1 d-flex justify-content-center align-items-center">
+                                    <i class="fa-solid fa-microphone"></i>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-
-
             </div>
         </div>
     </div>
