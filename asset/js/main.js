@@ -161,13 +161,16 @@ var app = new Vue({
             }
         ],
         indexChanged: 0,
+        myMessage: '',
     },
     methods: {
-        showContactsIndex: function(index){
+        showContactsIndex: function(index){           
             console.log(index);
             this.indexChanged = index;
-            console.log(`l'indice ora è: ${this.indexChanged}`);
-        }
-
+            console.log(`l'indice ora è: ${this.indexChanged}`);    
+        },
+        sendMessage(event){        
+            this.myMessage = event.myMessage;
+        },
     }
 })
