@@ -20,7 +20,7 @@
             <div class="container h-100 bg-white main">
                 <div class="row h-100">
                     <div class="col-4 border p-0 h-100 d-flex flex-column">
-                        <!-- PROFILE AND CHATS -->
+                        <!-- SEZIONE MIO PROFILO -->
                         <div class="d-flex justify-content-between align-items-center bg-light">
                             <div class="d-flex align-items-center">
                                 <!-- template literal -->
@@ -29,32 +29,32 @@
                                 <span class="fs-5">{{ profile.name }}</span>
                             </div>
                             <div class="me-3">
-                                <i class="fa-solid fa-circle-notch"></i>
-                                <i class="fa-solid fa-message mx-3"></i>
-                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                                <i class="fa-solid fa-circle-notch" role="button"></i>
+                                <i class="fa-solid fa-message mx-3" role="button"></i>
+                                <i class="fa-solid fa-ellipsis-vertical" role="button"></i>
                             </div>
                         </div>
-                        <!-- NOTIFICATIONS -->
+                        <!-- SEZIONE RICHESTA NOTIFICHE -->
                         <div class="d-flex align-items-center bg-info p-3">
                             <div class="border rounded-circle bg-white me-3">
                                 <i class="fa-solid fa-bell-slash text-info p-2"></i>
                             </div>
                             <div class="lh-1">
                                 <p class="small-text">Ricevi notifiche di nuovi messaggi</p>
-                                <p class="text-secondary text-decoration-underline small-text">Ottieni notifiche desktop
+                                <p class="text-secondary text-decoration-underline small-text" role="button">Ottieni notifiche desktop
                                 </p>
                             </div>
                         </div>
-                        <!-- SEARCH -->
+                        <!-- SEZIONE RICERCA -->
                         <div class="d-flex align-items-center px-1 border bg-light">
                             <div class="input-group my-2">
                                 <span class="input-group-text" id="basic-addon1"><i
                                         class="fa-solid fa-magnifying-glass"></i></span>
-                                <input type="text" class="form-control" aria-label="Username"
-                                    aria-describedby="basic-addon1" placeholder="Cerca o inizia una nuova chat">
+                                <input v-model="search" type="text" class="form-control" aria-label="Username"
+                                    aria-describedby="basic-addon1" placeholder="Cerca o inizia una nuova chat" @keyup.enter="searchChat">
                             </div>
                         </div>
-                        <!-- CHATS -->
+                        <!-- SEZIONE CHATS -->
                         <div class="contactsContainer">
                             <ul class="list-group list-group-flush h-100 contactsList">
                                 <li v-for="(element, index) in contacts" class="d-flex justify-content-between align-items-center list-group-item border" role="button" @click="showContactsIndex(index)">
@@ -73,8 +73,9 @@
                             </ul>
                         </div>
                     </div>
+                    <!-- SEZIONE CHAT APERTA -->
                     <div class="col-8 d-flex flex-column justify-content p-0 h-100">
-                        <!-- HEADER CHAT -->
+                        <!-- SEZIONE NOME UTENTE E SUO ACCESSO CHAT APERTA -->
                         <div class="d-flex justify-content-between align-items-center bg-light">
                             <div class="d-flex align-items-center">
                                 <div class="d-flex align-items-center">
@@ -103,13 +104,13 @@
                                 </li>
                             </ul>
                         </div>
+                        <!-- FOOTER CHAT -->
                         <div class="container w-100 py-2 message-container">
                             <div class="row">
                                 <div class="col-1 d-flex justify-content-center align-items-center">
                                     <i class="fa-regular fa-face-smile"></i>
                                 </div>
                                 <div class="col-10">
-                                    
                                     <input v-model="myMessage" type="text" class="form-control input" aria-label="Username"
                                         aria-describedby="basic-addon1" placeholder="Scrivi un messaggio" 
                                         @keyup.enter="(sendMessage(indexChanged))">

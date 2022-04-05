@@ -160,32 +160,37 @@ var app = new Vue({
                 ],
             }
         ],
+        //Variabile indice
         indexChanged: 0,
+        //Variabile messaggio digitato
         myMessage: '',
+        search: '',
     },
     methods: {
+        //Funzione per cambiare chat al click
         showContactsIndex: function(index){           
-            this.indexChanged = index;    
+            this.indexChanged = index;  
         },
+        //Funzione per l'invio di un messaggio e ricezione risposta automatica dopo 1 secondo
         sendMessage: function(index){ 
             this.contacts[index].messages.push({
-                date: dayjs().format('HH:mm'),
+                date: dayjs().format('DD/MM/YY HH:MM:ss'),
                 message: this.myMessage,
                 status: 'sent',
             }),
-            console.log(this.myMessage);
             this.myMessage = '';
              setTimeout(
-                    () =>{
-                        this.contacts[index].messages.push(
-                            {
-                                date: dayjs().format('DD/MM/YY HH.MM'),
-                                message: 'ok',
-                                status: 'received'
-                            }
-                        )
-                    }, 1000
-                )
-        }
-    }
+                () =>{
+                    this.contacts[index].messages.push(
+                        {
+                            date: dayjs().format('DD/MM/YY HH:MM:ss'),
+                            message: 'ok',
+                            status: 'received'
+                        }
+                    )
+                }, 1000
+            )
+        },
+        
+    },
 })

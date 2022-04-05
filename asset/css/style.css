@@ -36,6 +36,7 @@ p{
     margin-bottom: 0;
 }
 
+/* CHAT COLOR */
 .sent{
     background-color: #D8F8BF;
 }
@@ -53,9 +54,11 @@ p{
     background-color: #F1EEED;
 }
 
+/* OVERFLOW */
 .contactsContainer{
     overflow: auto;
 }
+
 .contactsList{
     overflow: auto;
 }
@@ -64,7 +67,7 @@ p{
     overflow: auto;
 }
 
-le colonne a 100% di altezza
+/* le colonne a 100% di altezza
 d-flex a col 4 poi column
 div contenitore della lista hidden
-ul max height 100% poi scroll
+ul max height 100% poi scroll */
