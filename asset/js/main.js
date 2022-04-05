@@ -165,12 +165,27 @@ var app = new Vue({
     },
     methods: {
         showContactsIndex: function(index){           
-            console.log(index);
-            this.indexChanged = index;
-            console.log(`l'indice ora è: ${this.indexChanged}`);    
+            this.indexChanged = index;    
         },
-        sendMessage(event){        
-            this.myMessage = event.myMessage;
-        },
+        sendMessage: function(index){ 
+            this.contacts[index].messages.push({
+                date: dayjs().format('HH:mm'),
+                message: this.myMessage,
+                status: 'sent',
+            }),
+            console.log(this.myMessage);
+            this.myMessage = '';
+             setTimeout(
+                    () =>{
+                        this.contacts[index].messages.push(
+                            {
+                                date: dayjs().format('DD/MM/YY HH.MM'),
+                                message: 'ok',
+                                status: 'received'
+                            }
+                        )
+                    }, 1000
+                )
+        }
     }
 })

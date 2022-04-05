@@ -78,10 +78,10 @@
                         <div class="d-flex justify-content-between align-items-center bg-light">
                             <div class="d-flex align-items-center">
                                 <div class="d-flex align-items-center">
-                                    <img src="./asset/img/avatar_1.jpg" alt="profilo"
+                                    <img :src="`./asset/img/avatar${contacts[indexChanged].avatar}.jpg`" alt="profilo"
                                         class="mx-3 my-1 img-size rounded-circle">
                                     <div class="d-flex flex-column">
-                                        <span class="fs-5">Michele</span>
+                                        <span class="fs-5">{{ contacts[indexChanged].name }}</span>
                                         <span class="small-text text-secondary">Ultimo accesso oggi alle 12:00</span>
                                     </div>
                                 </div>
@@ -94,21 +94,11 @@
                         </div>
                         <!-- CHAT -->
                         <div class="p-3 chatBackground h-100">
-                            <ul class="list-group list-group-flush">
+                            <ul class="list-group list-group-flush chatMessage">
                                 <li class="list-group-item rounded-3 sent mb-3 p-3" v-for="(element, index) in contacts[indexChanged].messages" :class="(element.status == 'sent') ? 'align-self-end sent' : 'align-self-start received'">
                                    {{ element.message }}
                                    <p class="text-end very-small-text">
                                        {{ element.date }}
-                                   </p>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="p-3 chatBackground h-100">
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item rounded-3 mb-3 p-3 sent align-self-end">
-                                   {{ myMessage }}
-                                   <p class="text-end very-small-text">
-                                    
                                    </p>
                                 </li>
                             </ul>
@@ -122,7 +112,7 @@
                                     
                                     <input v-model="myMessage" type="text" class="form-control input" aria-label="Username"
                                         aria-describedby="basic-addon1" placeholder="Scrivi un messaggio" 
-                                        @keyup.enter="sendMessage">
+                                        @keyup.enter="(sendMessage(indexChanged))">
                                 </div>
                                 <div class="col-1 d-flex justify-content-center align-items-center">
                                     <i class="fa-solid fa-microphone"></i>
@@ -135,6 +125,7 @@
         </div>
     </div>
 
+    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
     </script>

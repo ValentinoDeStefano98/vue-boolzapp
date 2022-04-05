@@ -46,6 +46,7 @@ p{
 
 .chatBackground{
     background-image: url(./../img/mine.jpg);
+    overflow: auto;
 }
 
 .message-container{
@@ -53,10 +54,14 @@ p{
 }
 
 .contactsContainer{
-    overflow: hidden;
+    overflow: auto;
 }
 .contactsList{
-    overflow: scroll;
+    overflow: auto;
+}
+
+.chatMessage{
+    overflow: auto;
 }
 
 le colonne a 100% di altezza
