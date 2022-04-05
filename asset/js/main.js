@@ -179,18 +179,22 @@ var app = new Vue({
                 status: 'sent',
             }),
             this.myMessage = '';
-             setTimeout(
-                () =>{
-                    this.contacts[index].messages.push(
-                        {
-                            date: dayjs().format('DD/MM/YY HH:MM:ss'),
-                            message: 'ok',
-                            status: 'received'
-                        }
-                    )
-                }, 1000
+            setTimeout(
+            () =>{
+                this.contacts[index].messages.push(
+                    {
+                        date: dayjs().format('DD/MM/YY HH:MM:ss'),
+                        message: 'ok',
+                        status: 'received'
+                    }
+                )
+            }, 1000
             )
         },
+        searchChat: function(search){
+            console.log(search);
+
+        }
         
     },
 })
