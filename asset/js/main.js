@@ -4,7 +4,7 @@ var app = new Vue({
     data: {
         profile: {
             name: 'Sofia',
-            avatar: './asset/img/avatar_io.jpg',
+            avatar: '_io',
         },
         contacts: [{
                 name: 'Michele',
@@ -159,9 +159,15 @@ var app = new Vue({
                     }
                 ],
             }
-        ]
+        ],
+        indexChanged: 0,
     },
     methods: {
+        showContactsIndex: function(index){
+            console.log(index);
+            this.indexChanged = index;
+            console.log(`l'indice ora è: ${this.indexChanged}`);
+        }
 
     }
 })

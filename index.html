@@ -15,7 +15,6 @@
 </head>
 
 <body>
-
     <div id="root">
         <div class="background py-4">
             <div class="container h-100 bg-white main">
@@ -24,7 +23,8 @@
                         <!-- PROFILE AND CHATS -->
                         <div class="d-flex justify-content-between align-items-center bg-light">
                             <div class="d-flex align-items-center">
-                                <img :src="profile.avatar" alt="profilo"
+                                <!-- template literal -->
+                                <img :src="`./asset/img/avatar${profile.avatar}.jpg`" alt="`immagine profilo di ${profile.avatar}`"
                                     class="mx-3 my-1 rounded-circle img-size">
                                 <span class="fs-5">{{ profile.name }}</span>
                             </div>
@@ -57,7 +57,7 @@
                         <!-- CHATS -->
                         <div class="contactsContainer">
                             <ul class="list-group list-group-flush h-100 contactsList">
-                                <li v-for="element in contacts" class="d-flex justify-content-between align-items-center list-group-item border">
+                                <li v-for="(element, index) in contacts" class="d-flex justify-content-between align-items-center list-group-item border" role="button" @click="showContactsIndex(index)">
                                     <div class="d-flex align-items-center">
                                         <img v-bind:src="'./asset/img/avatar' + element.avatar + '.jpg' " alt="profilo"
                                             class="me-3 img-size rounded-circle">
@@ -95,29 +95,11 @@
                         <!-- CHAT -->
                         <div class="p-3 chatBackground h-100">
                             <ul class="list-group list-group-flush">
-                                <li class="list-group-item rounded-3 sent mb-3 align-self-end p-1">
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col-8 text-start">
-                                                <span>Hai portato a spasso il cane?</span>
-                                            </div>
-                                            <div class="col-4 d-flex justify-content-end align-items-end">
-                                                <span class="small-text">12:00</span>
-                                            </div>
-                                        </div>
-                                    </div>         
-                                </li>
-                                <li class="list-group-item rounded-3 received mb-3 align-self-start p-1">
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col-8 text-start">
-                                                <span>Hai portato a spasso il cane?</span>
-                                            </div>
-                                            <div class="col-4 d-flex justify-content-end align-items-end">
-                                                <span class="small-text">12:00</span>
-                                            </div>
-                                        </div>
-                                    </div>
+                                <li class="list-group-item rounded-3 sent mb-3 p-3" v-for="(element, index) in contacts[indexChanged].messages" :class="(element.status == 'sent') ? 'align-self-end sent' : 'align-self-start received'">
+                                   {{ element.message }}
+                                   <p class="text-end very-small-text">
+                                       {{ element.date }}
+                                   </p>
                                 </li>
                             </ul>
                         </div>
