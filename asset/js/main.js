@@ -194,7 +194,7 @@ var app = new Vue({
         showLastMessage: function(){
             this.contacts.forEach(elm => {
                 if(this.elm.messages == messages.length -1){
-                    return this.elm.messages;
+                    return this.messages;
                 }
 
             });
