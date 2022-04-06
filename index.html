@@ -24,7 +24,8 @@
                         <div class="d-flex justify-content-between align-items-center bg-light">
                             <div class="d-flex align-items-center">
                                 <!-- template literal -->
-                                <img :src="`./asset/img/avatar${profile.avatar}.jpg`" alt="`immagine profilo di ${profile.avatar}`"
+                                <img :src="`./asset/img/avatar${profile.avatar}.jpg`"
+                                    alt="`immagine profilo di ${profile.avatar}`"
                                     class="mx-3 my-1 rounded-circle img-size">
                                 <span class="fs-5">{{ profile.name }}</span>
                             </div>
@@ -41,7 +42,8 @@
                             </div>
                             <div class="lh-1">
                                 <p class="small-text">Ricevi notifiche di nuovi messaggi</p>
-                                <p class="text-secondary text-decoration-underline small-text" role="button">Ottieni notifiche desktop
+                                <p class="text-secondary text-decoration-underline small-text" role="button">Ottieni
+                                    notifiche desktop
                                 </p>
                             </div>
                         </div>
@@ -57,17 +59,26 @@
                         <!-- SEZIONE CHATS -->
                         <div class="contactsContainer">
                             <ul class="list-group list-group-flush h-100 contactsList">
-                                <li v-for="(element, index) in searchChat" class="d-flex justify-content-between align-items-center list-group-item border" role="button" @click="showContactsIndex(index)">
-                                    <div class="d-flex align-items-center">
-                                        <img v-bind:src="'./asset/img/avatar' + element.avatar + '.jpg'" alt="profilo"
-                                            class="me-3 img-size rounded-circle">
-                                        <div class="d-flex flex-column align-self-start">
-                                            <span class="fs-5">{{ element.name }}</span>
-                                            <span class="small-text text-secondary">{{ showLastMessage() }}</span>
+                                <li v-for="(element, index) in searchChat"
+                                    class="d-flex justify-content-between align-items-center list-group-item border"
+                                    role="button" @click="showContactsIndex(index)">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-8 d-flex p-0">
+                                                <img v-bind:src="'./asset/img/avatar' + element.avatar + '.jpg'"
+                                                    alt="profilo" class="me-3 img-size rounded-circle">
+                                                <div class="d-flex flex-column align-self-start">
+                                                    <span class="fs-5">{{ element.name }}</span>
+                                                    <span class="small-text text-secondary">
+                                                        {{ showLastMessage(index) }} </span>
+                                                </div>
+                                            </div>
+                                            <div class="col-4">
+                                                <span class="very-small-text text-secondary">
+                                                    {{ showLastDateMessage(index) }}
+                                                </span>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="d-flex align-self-start">
-                                        <span class="small-text text-secondary">12:00</span>
                                     </div>
                                 </li>
                             </ul>
@@ -95,14 +106,36 @@
                         </div>
                         <!-- CHAT -->
                         <div class="p-3 chatBackground h-100">
+
                             <ul class="list-group list-group-flush chatMessage">
-                                <li class="list-group-item rounded-3 sent mb-3 p-3" v-for="(element, index) in contacts[indexChanged].messages" :class="(element.status == 'sent') ? 'align-self-end sent' : 'align-self-start received'">
-                                   {{ element.message }}
-                                   <p class="text-end very-small-text">
-                                       {{ element.date }}
-                                   </p>
+                                <li class="list-group-item rounded-3 sent mb-3 p-2"
+                                    v-for="(element, index) in contacts[indexChanged].messages"
+                                    :class="(element.status == 'sent') ? 'align-self-end sent' : 'align-self-start received'">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-8 p-0">
+                                                {{ element.message }}
+                                            </div>
+
+                                            <div class="col-4 p-0">
+                                                <div class="d-flex flex-column">
+                                                    <i class="fa-solid fa-angle-down align-self-end"></i>
+                                                    <p class="text-end very-small-text">
+                                                        {{ element.date }}
+                                                    </p>
+                                                </div>
+
+
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
                                 </li>
                             </ul>
+
                         </div>
                         <!-- FOOTER CHAT -->
                         <div class="container w-100 py-2 message-container">
@@ -111,9 +144,9 @@
                                     <i class="fa-regular fa-face-smile"></i>
                                 </div>
                                 <div class="col-10">
-                                    <input v-model="myMessage" type="text" class="form-control input" aria-label="Username"
-                                        aria-describedby="basic-addon1" placeholder="Scrivi un messaggio" 
-                                        @keyup.enter="(sendMessage(indexChanged))">
+                                    <input v-model="myMessage" type="text" class="form-control input"
+                                        aria-label="Username" aria-describedby="basic-addon1"
+                                        placeholder="Scrivi un messaggio" @keyup.enter="(sendMessage(indexChanged))">
                                 </div>
                                 <div class="col-1 d-flex justify-content-center align-items-center">
                                     <i class="fa-solid fa-microphone"></i>
@@ -133,4 +166,5 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script src="./asset/js/main.js"></script>
 </body>
+
 </html>
