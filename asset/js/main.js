@@ -197,8 +197,6 @@ var app = new Vue({
                     return elm.messages;
                 }
             });
-            
-            }
         } ,   
     },
     //Utilizzando il computed funziona
