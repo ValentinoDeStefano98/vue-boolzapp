@@ -165,6 +165,7 @@ var app = new Vue({
         //Variabile messaggio digitato
         myMessage: '',
         search: '',
+        actualMessage: '',
     },
     methods: {
         //Funzione per cambiare chat al click
@@ -194,8 +195,14 @@ var app = new Vue({
         showLastMessage: function(index){
             return this.contacts[index].messages[this.contacts[index].messages.length - 1].message;  
         },
+        //Funzione per visualizzare la data dell'ultimo messaggio nella lista delle chat
         showLastDateMessage: function(index){
             return this.contacts[index].messages[this.contacts[index].messages.length - 1].date;  
+        },
+        //Funzione per eliminare un messaggio
+        deleteMessage: function(index){
+            this.actualMessage = index;
+            this.contacts[this.indexChanged].messages.splice(index, 1);
         },
     },
     //Utilizzando il computed funziona
