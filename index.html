@@ -59,9 +59,8 @@
                         <!-- SEZIONE CHATS -->
                         <div class="contactsContainer">
                             <ul class="list-group list-group-flush h-100 contactsList">
-                                <li v-for="(element, index) in searchChat"
-                                    class=" list-group-item border"
-                                    role="button" @click="showContactsIndex(index)">
+                                <li v-for="(element, index) in searchChat" class=" list-group-item border" role="button"
+                                    @click="showContactsIndex(index)">
                                     <div class="container p-1">
                                         <div class="row d-flex justify-content-between align-items-center">
                                             <div class="col-8 d-flex p-0">
@@ -106,36 +105,38 @@
                         </div>
                         <!-- CHAT -->
                         <div class="p-3 chatBackground h-100">
-
-                            <ul class="list-group list-group-flush chatMessage">
+                            <ul class="list-group list-group-flush chatMessage h-100">
                                 <li class="list-group-item rounded-3 sent mb-3 p-2"
                                     v-for="(element, index) in contacts[indexChanged].messages"
                                     :class="(element.status == 'sent') ? 'align-self-end sent' : 'align-self-start received'">
                                     <div class="container">
-                                        <div class="row">
+                                        <div class="row dropDownShow">
                                             <div class="col-8 p-0 d-flex align-items-center">
                                                 {{ element.message }}
                                             </div>
-
-                                            <div class="col-4 p-0">
-                                                <div class="d-flex flex-column align-items-end justify-content-between h-100">
-                                                    <i class="fa-solid fa-angle-down "></i>
+                                            <div class="col-4 p-0 ">
+                                                <div class="d-flex flex-column align-items-end justify-content-between h-100 menuShow">
+                                                    <i @mouseover="dropDownContent=true" class="fa-solid fa-angle-down dropDownButton" role="button"></i>
+                                                    
+                                                    <div class="m-2 dropDownContent">
+                                                        <ul class="list-group list-group-flush">
+                                                            <li class="list-group-item small-text">
+                                                                <span>Info messaggio</span>
+                                                            </li>
+                                                            <li class="list-group-item small-text">
+                                                                <span>Elimina messaggio</span>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
                                                     <p class="text-end very-small-text">
                                                         {{ element.date }}
                                                     </p>
                                                 </div>
-
-
-
                                             </div>
-
                                         </div>
-
                                     </div>
-
                                 </li>
                             </ul>
-
                         </div>
                         <!-- FOOTER CHAT -->
                         <div class="container w-100 py-2 message-container">

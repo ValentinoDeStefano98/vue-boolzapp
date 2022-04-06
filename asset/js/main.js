@@ -189,7 +189,7 @@ var app = new Vue({
                 )
             }, 1000
             )
-        }, 
+        },
         //Funzione per visualizzare ultimo messaggio nella lista delle chat
         showLastMessage: function(index){
             return this.contacts[index].messages[this.contacts[index].messages.length - 1].message;  
