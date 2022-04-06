@@ -87,8 +87,14 @@ ul max height 100% poi scroll */
     z-index: 1;
     top: 30%;
     right: 0;
+    box-shadow: 2px 2px 20px 2px #000;
 }
 
-.menuShow:hover .dropDownContent{
+/* Se inserisco due fratelli in un div e do al fratello maggiore (quello sopra) l'hover + il fratello minore da visualizzare, compare anche se clicco sull'icona */
+/* .dropDownButton:hover + .dropDownContent{
+    display: block;
+} */
+
+.dropDownContainer:hover .dropDownContent{
     display: block;
 }

@@ -26,7 +26,7 @@
                                 <!-- template literal -->
                                 <img :src="`./asset/img/avatar${profile.avatar}.jpg`"
                                     alt="`immagine profilo di ${profile.avatar}`"
-                                    class="mx-3 my-1 rounded-circle img-size">
+                                    class="mx-3 my-1 rounded-circle img-size" role="button">
                                 <span class="fs-5">{{ profile.name }}</span>
                             </div>
                             <div class="me-3">
@@ -115,19 +115,23 @@
                                                 {{ element.message }}
                                             </div>
                                             <div class="col-4 p-0 ">
-                                                <div class="d-flex flex-column align-items-end justify-content-between h-100 menuShow">
-                                                    <i @mouseover="dropDownContent=true" class="fa-solid fa-angle-down dropDownButton" role="button"></i>
-                                                    
-                                                    <div class="m-2 dropDownContent">
-                                                        <ul class="list-group list-group-flush">
-                                                            <li class="list-group-item small-text">
-                                                                <span role="button">Info messaggio</span>
-                                                            </li>
-                                                            <li class="list-group-item small-text">
-                                                                <span @click="deleteMessage(index)" role="button">Elimina messaggio</span>
-                                                            </li>
-                                                        </ul>
+                                                <div
+                                                    class="d-flex flex-column align-items-end justify-content-between h-100 menuShow">
+                                                    <div class="dropDownContainer">
+                                                        <i class="fa-solid fa-angle-down dropDownButton"
+                                                            role="button"></i>
+                                                        <div class="m-2 dropDownContent">
+                                                            <ul class="list-group list-group-flush">
+                                                                <li class="list-group-item small-text" role="button">
+                                                                    <span>Info messaggio</span>
+                                                                </li>
+                                                                <li class="list-group-item small-text" role="button">
+                                                                    <span @click="deleteMessage(index)">Elimina messaggio</span>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
                                                     </div>
+
                                                     <p class="text-end very-small-text">
                                                         {{ element.date }}
                                                     </p>
