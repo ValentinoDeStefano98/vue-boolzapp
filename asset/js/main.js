@@ -166,11 +166,13 @@ var app = new Vue({
         myMessage: '',
         search: '',
         actualMessage: '',
+        condition: false,
     },
     methods: {
         //Funzione per cambiare chat al click
         showContactsIndex: function(index){           
-            this.indexChanged = index;  
+            this.indexChanged = index;
+            condition = true;
         },
         //Funzione per l'invio di un messaggio e ricezione risposta automatica dopo 1 secondo
         sendMessage: function(index){ 

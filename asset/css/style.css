@@ -98,3 +98,7 @@ ul max height 100% poi scroll */
 .dropDownContainer:hover .dropDownContent{
     display: block;
 }
+
+.activeChat{
+    background-color: grey;
+}
