@@ -179,8 +179,7 @@ var app = new Vue({
                 status: 'sent',
             }),
             this.myMessage = '';
-            setTimeout(
-            () =>{
+            setTimeout(() =>{
                 this.contacts[index].messages.push(
                     {
                         date: dayjs().format('DD/MM/YY HH:MM:ss'),
@@ -190,11 +189,27 @@ var app = new Vue({
                 )
             }, 1000
             )
-        },
-        searchChat: function(search){
-            console.log(search);
+        }, 
+        //Funzione per visualizzare ultimo messaggio nella lista delle chat
+        showLastMessage: function(){
+            this.contacts.forEach(elm => {
+                if(this.elm.messages == messages.length -1){
+                    return this.elm.messages;
+                }
 
-        }
-        
+            });
+            
+            }
+        } ,   
     },
+    //Utilizzando il computed funziona
+    computed: {
+        searchChat : function(){
+            return this.contacts.filter(element => {
+                if(element.name.toLowerCase().includes(this.search.toLowerCase())){
+                    return element.name;
+                }         
+            })
+        },
+    }, 
 })

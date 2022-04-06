@@ -51,19 +51,19 @@
                                 <span class="input-group-text" id="basic-addon1"><i
                                         class="fa-solid fa-magnifying-glass"></i></span>
                                 <input v-model="search" type="text" class="form-control" aria-label="Username"
-                                    aria-describedby="basic-addon1" placeholder="Cerca o inizia una nuova chat" @keyup.enter="searchChat(search)">
+                                    aria-describedby="basic-addon1" placeholder="Cerca o inizia una nuova chat">
                             </div>
                         </div>
                         <!-- SEZIONE CHATS -->
                         <div class="contactsContainer">
                             <ul class="list-group list-group-flush h-100 contactsList">
-                                <li v-for="(element, index) in contacts" class="d-flex justify-content-between align-items-center list-group-item border" role="button" @click="showContactsIndex(index)">
+                                <li v-for="(element, index) in searchChat" class="d-flex justify-content-between align-items-center list-group-item border" role="button" @click="showContactsIndex(index)">
                                     <div class="d-flex align-items-center">
                                         <img v-bind:src="'./asset/img/avatar' + element.avatar + '.jpg'" alt="profilo"
                                             class="me-3 img-size rounded-circle">
                                         <div class="d-flex flex-column align-self-start">
                                             <span class="fs-5">{{ element.name }}</span>
-                                            <span class="small-text text-secondary">Ultimo messaggio inviato</span>
+                                            <span class="small-text text-secondary"></span>
                                         </div>
                                     </div>
                                     <div class="d-flex align-self-start">
