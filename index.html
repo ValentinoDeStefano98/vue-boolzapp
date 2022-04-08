@@ -68,11 +68,13 @@
                                                     alt="profilo" class="me-3 img-size rounded-circle">
                                                 <div class="d-flex flex-column align-self-start">
                                                     <span class="fs-5">{{ element.name }}</span>
+                                                    <span v-if="showLastMessage(index) == false" class="small-text text-secondary">Non ci sono messaggi recenti</span>
                                                     <span class="small-text text-secondary">
                                                         {{ showLastMessage(index) }} </span>
                                                 </div>
                                             </div>
                                             <div class="col-4">
+                                                <span v-if="showLastMessage(index) == false"></span>
                                                 <span class="very-small-text text-secondary">
                                                     {{ showLastDateMessage(index) }}
                                                 </span>

@@ -195,11 +195,19 @@ var app = new Vue({
         },
         //Funzione per visualizzare ultimo messaggio nella lista delle chat
         showLastMessage: function(index){
-            return this.contacts[index].messages[this.contacts[index].messages.length - 1].message;  
+            if (this.contacts[index].messages.length == 0){
+                return '';
+            } else {
+            return this.contacts[index].messages[this.contacts[index].messages.length - 1].message;
+            }  
         },
         //Funzione per visualizzare la data dell'ultimo messaggio nella lista delle chat
         showLastDateMessage: function(index){
-            return this.contacts[index].messages[this.contacts[index].messages.length - 1].date;  
+            if (this.contacts[index].messages.length == 0){
+                return '';
+            } else {
+            return this.contacts[index].messages[this.contacts[index].messages.length - 1].date;
+            }
         },
         //Funzione per eliminare un messaggio
         deleteMessage: function(index){
